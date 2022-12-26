@@ -39,10 +39,10 @@ class XbrlInstance():
             }
             name = self.url.split('/')[-1]
             self.response = requests.get(self.url, headers=header).text
-            with open(f'./{name}', 'w') as file:
+            with open(f'./xml/{name}', 'w') as file:
                 file.write(self.response)
 
-            with open(f'./{name}', 'r') as file:
+            with open(f'./xml/{name}', 'r') as file:
                 self.response = file.read()
 
         elif self.url is None and self.fp is not None:
